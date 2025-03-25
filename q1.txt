@@ -1,0 +1,8 @@
+For each of the following process state transition, say whether the transition is
+legal and how the transition occurs or why it cannot.
+    a. Change from thread state WAIT to thread state RUNNING
+        answer: not legal because it requires the ready intermediate stage
+    b. Change from thread state RUNNING to thread state WAIT
+        answer: legal since the thread may block itself to wait for some event or resource.
+    c. Change from thread state READY to thread state WAIT 
+        answer: it is also legal because they are stages next to each other
