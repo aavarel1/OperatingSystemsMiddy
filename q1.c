@@ -37,7 +37,7 @@ int main()
     else
     {
         // Parent process writing to the file
-        const char *parent_msg = "Parent process writing.\n";
+        const char *parent_msg = " Parent process writing.\n";
         if (write(fd, parent_msg, 22) == -1)
         {
             perror("Error writing by parent");
