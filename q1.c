@@ -26,7 +26,7 @@ int main()
     if (pid == 0)
     {
         // Child process writing to the file
-        const char *child_msg = "Child process writing.\n";
+        const char *child_msg = " Child process writing.\n";
         if (write(fd, child_msg, 22) == -1)
         {
             perror("Error writing by child");

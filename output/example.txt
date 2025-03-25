@@ -1,1 +1,1 @@
- Parent process writinChild process writing.
+ Parent process writin Child process writing
