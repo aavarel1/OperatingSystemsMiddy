@@ -1,0 +1,9 @@
+void main () {
+    fork();    // First fork
+    fork();    // Second fork
+    exit();    // Exit
+}
+
+// The program creates 3 child processes in total. because the first fork creates
+the parent and first child and the second fork creates two childs, one from the parent and 
+a child from the first child.
