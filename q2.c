@@ -6,7 +6,6 @@
 
 int main()
 {
-    // Open a file for writing (create if it doesn't exist)
     int fd = open("example.txt", O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
     if (fd == -1)
     {
@@ -14,7 +13,6 @@ int main()
         return 1;
     }
 
-    // Fork to create a new process
     pid_t pid = fork();
 
     if (pid == -1)
@@ -25,7 +23,6 @@ int main()
 
     if (pid == 0)
     {
-        // Child process writing to the file
         const char *child_msg = " Child process writing.\n";
         if (write(fd, child_msg, 22) == -1)
         {
@@ -36,7 +33,6 @@ int main()
     }
     else
     {
-        // Parent process writing to the file
         const char *parent_msg = " Parent process writing.\n";
         if (write(fd, parent_msg, 22) == -1)
         {
@@ -46,3 +42,6 @@ int main()
         return 0;
     }
 }
+
+// both the parent and child processes can access the file descriptor returned by open()
+// when both the parent and child are writing at the same time the output is interleaved
